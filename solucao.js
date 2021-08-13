@@ -1125,6 +1125,7 @@ function btn04() {
         }
         document.querySelector('#resp04').innerHTML = `${ex} itens disponiveis e em destaque`
     }
+<<<<<<< HEAD
 }
 function btn05() {
     let ex = 0
@@ -1313,3 +1314,6 @@ btn12()
 btn13()
 btn14()
 btn15()
+
+
+
