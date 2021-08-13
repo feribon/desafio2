@@ -1092,24 +1092,224 @@ var listaProdutos = [
         }
     }
 ]
+function btn01() {
+    let ex = 0
+    for (item in listaProdutos) {
+        ex += listaProdutos[item].qtdEstoque
+    }
+    document.querySelector('#resp01').innerHTML = `${ex} itens em estoque`
+}
+function btn02() {
+    let ex = 0
+    for (item in listaProdutos) {
+        if (listaProdutos[item].emDestaque === 'sim') {
+            ex += listaProdutos[item].qtdEstoque
+        }
+    }
+    document.querySelector('#resp02').innerHTML = `${ex} itens em destaque`
+}
+function btn03() {
+    let ex = 0
+    for (item in listaProdutos) {
+        if (listaProdutos[item].disponivel === 'sim') {
+            ex += listaProdutos[item].qtdEstoque
+        }
+    }
+    document.querySelector('#resp03').innerHTML = `${ex} itens disponiveis`
+}
+function btn04() {
+    let ex = 0
+    for (item in listaProdutos) {
+        if (listaProdutos[item].disponivel === 'sim' && listaProdutos[item].emDestaque === 'sim') {
+            ex += listaProdutos[item].qtdEstoque
+        }
+        document.querySelector('#resp04').innerHTML = `${ex} itens disponiveis e em destaque`
+    }
+}
+function btn05() {
+    let ex = 0
+    for (item in listaProdutos) {
+        if (listaProdutos[item].disponivel === 'sim') {
+            ex += listaProdutos[item].qtdEstoque * listaProdutos[item].preco
+        }
+        document.querySelector('#resp05').innerHTML = `Valor do inventário: R$${ex} `
+    }
+}
+function btn06() {
+    let preco = 0
+    let dep = ""
+    let prod = ""
+    let ex = 0
+    for (item in listaProdutos) {
+        if (listaProdutos[item].preco > ex) {
+            ex = listaProdutos[item].preco
+            prod = listaProdutos[item].descricao
+            dep = listaProdutos[item].departamento.nomeDepto
+            preco = listaProdutos[item].preco
+        }
+        document.querySelector('#resp06').innerHTML = `Produto: ${prod} </br> Preço: R$${preco.toFixed(2)} </br> Departamento: ${dep}`
+    }
+}
+function btn07() {
+    let preco = 0
+    let dep = ""
+    let prod = ""
+    let ex = listaProdutos[0].preco
+    for (item in listaProdutos) {
+        if (listaProdutos[item].preco < ex) {
+            ex = listaProdutos[item].preco
+            prod = listaProdutos[item].descricao
+            dep = listaProdutos[item].departamento.nomeDepto
+            preco = listaProdutos[item].preco
+        }
+        document.querySelector('#resp07').innerHTML = `Produto: ${prod} </br> Preço: R$${preco.toFixed(2)} </br> Departamento: ${dep}`
+    }
+}
+function btn08() {
+    let prod = ""
+    let ex = 0
+    for (item in listaProdutos) {
+        if (listaProdutos[item].disponivel === 'sim') {
+            if ((listaProdutos[item].preco * listaProdutos[item].qtdEstoque) > ex) {
+                ex = listaProdutos[item].preco * listaProdutos[item].qtdEstoque
+                prod = listaProdutos[item].descricao
+            }
+        }
+        document.querySelector('#resp08').innerHTML = prod
+    }
+}
+function btn09() {
+    let prod = ""
+    let ex = listaProdutos[0].preco * listaProdutos[0].qtdEstoque
+    for (item in listaProdutos) {
+        if (listaProdutos[item].disponivel === 'sim') {
+            if ((listaProdutos[item].preco * listaProdutos[item].qtdEstoque) < ex) {
+                ex = listaProdutos[item].preco * listaProdutos[item].qtdEstoque
+                prod = listaProdutos[item].descricao
+            }
+        }
+        document.querySelector('#resp09').innerHTML = prod
+    }
+}
+function btn10() {
+    let ex = 0
+    for (item in listaProdutos) {
+        ex += listaProdutos[item].preco
+    }
+    let media = ex / listaProdutos.length
+    // console.log(ex, listaProdutos.length)
+    document.querySelector('#resp10').innerHTML = `R$${media.toFixed(2)}`
+}
+function btn11() {
+    let obj = []
+    item = 1
+    let soma = 0
+    for (i in listaProdutos) {
+        if (listaProdutos[i].departamento.idDepto == item) {
+            soma += listaProdutos[i].qtdEstoque
+        }
+        else {
+            obj.push({ Departamento: listaProdutos[i - 1].departamento.nomeDepto, QuantidadeEstoque: soma })
+            item++
+            soma = listaProdutos[i].qtdEstoque
+        }
+    }
+    obj.push({ Departamento: listaProdutos[i - 1].departamento.nomeDepto, QuantidadeEstoque: soma })
+    console.log(obj)
 
-function resolucao(){
-    ex1();
-    ex2();
-    ex3();
 }
 
-function ex1(){
-    // meu desafio aqui é percorrer a lista toda e mostrar quantos produtos existem
-    console.log("total de produtos: "+listaProdutos.length);
+function btn12() {
+    let obj = []
+    item = 1
+    let soma = 0
+    for (i in listaProdutos) {
+        if (listaProdutos[i].departamento.idDepto == item) {
+            soma += listaProdutos[i].qtdEstoque * listaProdutos[i].preco
+        }
+        else {
+            obj.push({ Departamento: listaProdutos[i - 1].departamento.nomeDepto, ValorInventario: soma.toFixed(2) })
+            item++
+            soma = listaProdutos[i].qtdEstoque * listaProdutos[i].preco
+        }
+    }
+    obj.push({ Departamento: listaProdutos[i - 1].departamento.nomeDepto, ValorInventario: soma.toFixed(2) })
+    console.log(obj)
+
+}
+function btn13() {
+    let obj = []
+    let qtd = 0
+    item = 1
+    let soma = 0
+    for (i in listaProdutos) {
+        if (listaProdutos[i].departamento.idDepto == item) {
+            qtd += listaProdutos[i].qtdEstoque
+            soma += listaProdutos[i].qtdEstoque * listaProdutos[i].preco
+        }
+        else {
+            obj.push({ Departamento: listaProdutos[i - 1].departamento.nomeDepto, TicketMedio: (soma / qtd).toFixed(2) })
+            item++
+            qtd = listaProdutos[i].qtdEstoque
+            soma = listaProdutos[i].qtdEstoque * listaProdutos[i].preco
+        }
+    }
+    obj.push({ Departamento: listaProdutos[i - 1].departamento.nomeDepto, TicketMedio: (soma / qtd).toFixed(2) })
+    console.log(obj)
+
 }
 
-function ex2(){
-    //
+function btn14() {
+    let obj = []
+    item = 1
+    let soma = 0
+    let itemCaro = 0
+    let depCaro = ''
+    for (i in listaProdutos) {
+        if (listaProdutos[i].departamento.idDepto == item) {
+            soma += listaProdutos[i].qtdEstoque * listaProdutos[i].preco
+        }
+        else {
+            if (itemCaro < soma) {
+                itemCaro = soma
+                depCaro = listaProdutos[i - 1].departamento.nomeDepto
+            }
+            item++
+            soma = listaProdutos[i].qtdEstoque * listaProdutos[i].preco
+        }
+    }
+    obj.push({ Departamento: depCaro, ValorInventario: itemCaro.toFixed(2) })
+    console.log(obj)
+
 }
-
-function ex3(){
-    //
+function btn15() {
+    let obj = []
+    item = 1
+    let soma = 0
+    let itemBarato = 0
+    for (produto of listaProdutos) {
+        itemBarato += produto.qtdEstoque * produto.preco
+    }
+    let depBarato = ''
+    for (i in listaProdutos) {
+        if (listaProdutos[i].departamento.idDepto == item) {
+            soma += listaProdutos[i].qtdEstoque * listaProdutos[i].preco
+        }
+        else {
+            if (itemBarato > soma) {
+                itemBarato = soma
+                depBarato = listaProdutos[i - 1].departamento.nomeDepto
+            }
+            item++
+            soma = listaProdutos[i].qtdEstoque * listaProdutos[i].preco
+        }
+    }
+    obj.push({ Departamento: depBarato, ValorInventario: itemBarato.toFixed(2) })
+    console.log(obj)
 
 }
-
+btn11()
+btn12()
+btn13()
+btn14()
+btn15()

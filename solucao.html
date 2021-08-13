@@ -8,149 +8,220 @@
     <script src="solucao.js"></script>
     <script defer scr='https://use.fontawesome.com/releases/v5.3.1/js/all.js'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <title>Document</title>
+    <title>Desafio em grupo. Gama academy</title>
+    <style>
+        .ajusteP {
+            min-height: 40px;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="columns is-multiline is-desktop">
+    <div class="columns is-multiline  is-desktop">
         <div
-            class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
             <article class="message is-success column">
                 <div class="message-header">
                     <p>Exercício 01</p>
-                    <button class="button is-info">Responder</button>
+                    <button class="button button is-primary is-rounded has-text-white" onclick="btn01()">REVELAR</button>
                 </div>
                 <div class="message-body">
                     Quantidade total de itens em estoque (somatória das quantidades de todos os produtos)
                 </div>
-                <input class="input is-link" type="text">
+                <p id="resp01" class="input is-link ajusteP"></p>
             </article>
         </div>
         <div
-            class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
             <article class="message is-success column">
                 <div class="message-header">
                     <p>Exercício 02</p>
-                    <button class="button is-info">Responder</button>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn02()">REVELAR</button>
                 </div>
                 <div class="message-body">
                     Quantidade total de itens em destaque (somatória das quantidades dos itens marcados como
                     "emDestaque: sim")
                 </div>
-                <input class="input is-link" type="text">
+                <p id="resp02" class="input is-link ajusteP"></p>
             </article>
         </div>
         <div
-            class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
             <article class="message is-success column">
                 <div class="message-header">
                     <p>Exercício 03</p>
-                    <button class="button is-info">Responder</button>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn03()">REVELAR</button>
                 </div>
                 <div class="message-body">
                     Quantidade total de itens disponíveis (similar ao anterior)
                 </div>
-                <input class="input is-link" type="text">
+                <p id="resp03" class="input is-link ajusteP"></p>
             </article>
         </div>
         <div
-            class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
             <article class="message is-success column">
                 <div class="message-header">
                     <p>Exercício 04</p>
-                    <button class="button is-info">Responder</button>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn04()">REVELAR</button>
                 </div>
                 <div class="message-body">
                     Quantidade de itens disponíveis e em destaque
                 </div>
-                <input class="input is-link" type="text">
+                <p id="resp04" class="input is-link ajusteP"></p>
             </article>
         </div>
         <div
-            class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
             <article class="message is-success column">
                 <div class="message-header">
                     <p>Exercício 05</p>
-                    <button class="button is-info">Responder</button>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn05()">REVELAR</button>
                 </div>
                 <div class="message-body">
                     Valor total do inventário da empresa (somatória dos valores individuais multiplicado pela quantidade
                     em estoque - considere apenas os produtos “EM ESTOQUE”)
                 </div>
-                <input class="input is-link" type="text">
+                <p id="resp05" class="input is-link ajusteP"></p>
             </article>
         </div>
         <div
-            class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
             <article class="message is-success column">
                 <div class="message-header">
                     <p>Exercício 06</p>
-                    <button class="button is-info">Responder</button>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn06()">REVELAR</button>
                 </div>
                 <div class="message-body">
                     Produto mais caro da loja (bem como seu departamento - considere apenas o preço dele)
                 </div>
-                <input class="input is-link" type="text">
+                <p id="resp06" class="input is-link ajusteP"></p>
             </article>
         </div>
         <div
-            class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
             <article class="message is-success column">
                 <div class="message-header">
                     <p>Exercício 07</p>
-                    <button class="button is-info">Responder</button>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn07()">REVELAR</button>
                 </div>
                 <div class="message-body">
                     Produto mais barato da loja (bem como seu departamento - considere apenas o preço dele)
                 </div>
-                <input class="input is-link" type="text">
+                <p id="resp07" class="input is-link ajusteP"></p>
             </article>
         </div>
         <div
-            class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
             <article class="message is-success column">
                 <div class="message-header">
                     <p>Exercício 08</p>
-                    <button class="button is-info">Responder</button>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn08()">REVELAR</button>
                 </div>
                 <div class="message-body">
                     Produto de estoque mais valioso (considere o preço multiplicado pela quantidade e também apenas EM
                     ESTOQUE)
                 </div>
-                <input class="input is-link" type="text">
+                <p id="resp08" class="input is-link ajusteP"></p>
             </article>
         </div>
         <div
-            class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
             <article class="message is-success column">
                 <div class="message-header">
                     <p>Exercício 09</p>
-                    <button class="button is-info">Responder</button>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn09()">REVELAR</button>
                 </div>
                 <div class="message-body">
                     Produto em estoque menos valioso (considere o preço multiplicado pela quantidade e também apenas EM
                     ESTOQUE)
                 </div>
-                <input class="input is-link" type="text">
+                <p id="resp09" class="input is-link ajusteP"></p>
             </article>
         </div>
         <div
-            class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
             <article class="message is-success column">
                 <div class="message-header">
                     <p>Exercício 10</p>
-                    <button class="button is-info">Responder</button>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn10()">REVELAR</button>
                 </div>
                 <div class="message-body">
                     Valor do ticket médio dos produtos da empresa (basicamente o valor total do inventário dividido pelo
                     número de itens - considere TODOS os produtos, porém considere apenas 1 exemplar por produto)
                 </div>
-                <input class="input is-link" type="text">
+                <p id="resp10" class="input is-link ajusteP"></p>
+            </article>
+        </div>
+        <div
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            <article class="message is-success column">
+                <div class="message-header">
+                    <p>Exercício 11</p>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn11()">REVELAR</button>
+                </div>
+                <div class="message-body">
+                    Somatória de itens por departamento (você deverá retornar um objeto contendo o nome do departamento e o total de itens nele - Novamente considere os produtos “EM ESTOQUE” - e é apenas a somatória da quantidade de itens)
+                </div>
+                <p id="resp11" class="input is-link ajusteP"></p>
+            </article>
+        </div>
+        <div
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            <article class="message is-success column">
+                <div class="message-header">
+                    <p>Exercício 12</p>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn12()">REVELAR</button>
+                </div>
+                <div class="message-body">
+                    Valor total do inventário por departamento (similar ao item anterior - considere TODOS os produtos)
+                </div>
+                <p id="resp12" class="input is-link ajusteP"></p>
+            </article>
+        </div>
+        <div
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            <article class="message is-success column">
+                <div class="message-header">
+                    <p>Exercício 13</p>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn13()">REVELAR</button>
+                </div>
+                <div class="message-body">
+                    Ticket médio por departamento (similar ao item anterior, porém retornando uma lista de objetos que contenha o nome do departamento e o seu ticket médio). Este é um exercícios difícil, porém é descomplicado de ser realizado tendo claro as demais saídas até então. Verifique a possibilidade de reutilizar parte da programação ou sua lógica trabalhada.
+                </div>
+                <p id="resp13" class="input is-link ajusteP"></p>
+            </article>
+        </div>
+        <div
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            <article class="message is-success column">
+                <div class="message-header">
+                    <p>Exercício 14</p>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn14()">REVELAR</button>
+                </div>
+                <div class="message-body">
+                    Departamento mais valioso (qual o departamento que tem a maior somatória dos valores dos itens - Considere todos os departamentos)
+                </div>
+                <p id="resp14" class="input is-link ajusteP"></p>
+            </article>
+        </div>
+        <div
+            class=" column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            <article class="message is-success column">
+                <div class="message-header">
+                    <p>Exercício 15</p>
+                    <button class="button is-primary is-rounded has-text-white" onclick="btn15()">REVELAR</button>
+                </div>
+                <div class="message-body">
+                    Departamento menos valioso (similar ao anterior)
+                </div>
+                <p id="resp15" class="input is-link ajusteP"></p>
             </article>
         </div>
 
     </div>
-
+    <script src="solucao.js"></script>
 </body>
 
 </html>
