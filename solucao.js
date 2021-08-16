@@ -1125,7 +1125,6 @@ function btn04() {
         }
         document.querySelector('#resp04').innerHTML = `${ex} itens disponiveis e em destaque`
     }
-<<<<<<< HEAD
 }
 function btn05() {
     let ex = 0
@@ -1198,7 +1197,6 @@ function btn10() {
         ex += listaProdutos[item].preco
     }
     let media = ex / listaProdutos.length
-    // console.log(ex, listaProdutos.length)
     document.querySelector('#resp10').innerHTML = `R$${media.toFixed(2)}`
 }
 function btn11() {
@@ -1217,9 +1215,8 @@ function btn11() {
     }
     obj.push({ Departamento: listaProdutos[i - 1].departamento.nomeDepto, QuantidadeEstoque: soma })
     console.log(obj)
-
+    document.querySelector('#resp11').innerHTML = `Resposta no console do navegador`
 }
-
 function btn12() {
     let obj = []
     item = 1
@@ -1236,7 +1233,7 @@ function btn12() {
     }
     obj.push({ Departamento: listaProdutos[i - 1].departamento.nomeDepto, ValorInventario: soma.toFixed(2) })
     console.log(obj)
-
+    document.querySelector('#resp12').innerHTML = `Resposta no console do navegador`
 }
 function btn13() {
     let obj = []
@@ -1257,7 +1254,7 @@ function btn13() {
     }
     obj.push({ Departamento: listaProdutos[i - 1].departamento.nomeDepto, TicketMedio: (soma / qtd).toFixed(2) })
     console.log(obj)
-
+    document.querySelector('#resp13').innerHTML = `Resposta no console do navegador`
 }
 
 function btn14() {
@@ -1281,7 +1278,7 @@ function btn14() {
     }
     obj.push({ Departamento: depCaro, ValorInventario: itemCaro.toFixed(2) })
     console.log(obj)
-
+    document.querySelector('#resp14').innerHTML = `Resposta no console do navegador`
 }
 function btn15() {
     let obj = []
@@ -1307,13 +1304,9 @@ function btn15() {
     }
     obj.push({ Departamento: depBarato, ValorInventario: itemBarato.toFixed(2) })
     console.log(obj)
-
+    document.querySelector('#resp15').innerHTML = `Resposta no console do navegador`
 }
-btn11()
-btn12()
-btn13()
-btn14()
-btn15()
+
 
 
 
